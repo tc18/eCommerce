@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="VO.FileVO" table="file">
+		<id type="integer" column="fileId" name="fileId">
+			<generator class="increment" />
+		</id>
+		<property name="fileName">
+			<column name="fileName"></column>
+		</property>
+		<property name="enFileName">
+			<column name="enFileName"></column>
+		</property>
+		<property name="filePath">
+			<column name="filePath"></column>
+		</property>
+		<many-to-one class="VO.ProductVO" name="productVO" column="productId"></many-to-one>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+<class name="VO.OfferVO" table="offer">
+<id name="offerId" type="integer" column="offerId">
+	<generator class="increment"/>
+</id>
+<property name="offerName">
+	<column name="offerName"/>
+</property>
+<property name="offerDescription">
+	<column name="offerDescription"/>
+</property>
+<property name="offerDateFrom" type="date">
+	<column name="offerDateFrom" />
+</property>
+<property name="offerDateTo" type="date">
+	<column name="offerDateTo" />
+</property>
+<many-to-one class="VO.CategoryVO" name="categoryVO" column="categoryId"></many-to-one>
+<many-to-one class="VO.SubCategoryVO" name="subCategoryVO" column="subCategoryId"></many-to-one>
+<many-to-one class="VO.ProductVO" name="productVO" column="productId"></many-to-one>
+<many-to-one class="VO.LoginVO" name="loginVO" column="loginId"></many-to-one>
+<many-to-one class="VO.MainTypeVO" name="mainTypeVO" column="mainTypeId"></many-to-one>
+</class>
+</hibernate-mapping>

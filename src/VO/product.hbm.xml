@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+<class name="VO.ProductVO" table="product">
+<id name="productId" type="integer" column="productId">
+	<generator class="increment"/>
+</id>
+<property name="productName">
+	<column name="productName"/>
+</property>
+<property name="productDescription">
+	<column name="productDescription"/>
+</property>
+<property name="price">
+	<column name="price"/>
+</property>
+<!-- <property name="fileName"> -->
+<!-- 	<column name="fileName"/> -->
+<!-- </property> -->
+<property name="sizeName">
+	<column name="sizeName"/>
+</property>
+<many-to-one class="VO.SizeVO" name="sizeVO" column="sizeId" lazy="false"></many-to-one>
+<many-to-one class="VO.BrandVO" name="brandVO" column="brandId" lazy="false"></many-to-one>
+<many-to-one class="VO.ColorVO" name="colorVO" column="colorId" lazy="false"></many-to-one>
+<many-to-one class="VO.CategoryVO" name="categoryVO" column="categoryId" lazy="false"></many-to-one>
+<many-to-one class="VO.SubCategoryVO" name="subCategoryVO" column="subCategoryId" lazy="false"></many-to-one>
+<many-to-one class="VO.LoginVO" name="loginVO" column="loginId" lazy="false"></many-to-one>
+<many-to-one class="VO.MainTypeVO" name="mainTypeVO" column="mainTypeId" lazy="false"></many-to-one>
+</class>
+</hibernate-mapping>

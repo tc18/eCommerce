@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+<class name="VO.TipsTypeVO" table="tipstype">
+<id name="tipsTypeId" type="integer" column="tipsTypeId">
+	<generator class="increment"/>
+</id>
+<property name="tipsTypeName">
+	<column name="tipsTypeName"/>
+</property>
+<property name="tipsTypeDescription">
+	<column name="tipsTypeDescription"/>
+</property>
+</class>
+</hibernate-mapping>
